@@ -8,6 +8,7 @@
     <style>
         h2{
             text-align: center;
+            font-size: 40px;
         }
         .box{
             display: flex;
@@ -16,20 +17,40 @@
         .input-box {
             height: 200px;
             width: 600px;
-        
-    
+        }
+        #result-match{
+            text-align: center;
+            font-size: 30px;
         }
     </style>
 </head>
 
 <body>
     <div>
-        <h2>String Compararor</h2>
+        <h2>String Comparator</h2>
         <div class="box">
-            <input type="=text" class="input-box" id="input1">
-            <input type="=text" class="input-box" id="input2">
+            <input type="=text" class="input-box" id="input1" onkeyup="result()" >
+            <input type="=text" class="input-box" id="input2" onkeyup="result()">
         </div>
+        <p id="result-match"></p>
     </div>
+    <script>
+        function result(){
+            const input1Element = document.getElementById("input1")
+            const input2Element = document.getElementById("input2")
+            const resultElement = document.getElementById("result-match")
+
+            if(input1Element.value == input2Element.value)
+            {
+                resultElement.innerText="Match!!!!!"
+                resultElement.style.color="green"
+            }
+            else{
+                resultElement.innerText ="Not match"
+                resultElement.style.color="red"
+            }
+        }
+    </script>
 </body>
 
 </html>
